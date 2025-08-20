@@ -129,7 +129,7 @@ btnIniciarTrivia.addEventListener('click', async () => {
 function renderPregunta(preguntaData) {
   preguntaActual.textContent = preguntaData.PREGUNTA;
   puntosObtenidos.textContent = `Puntos: ${dataTrivia.PUNTOS}`;
-  contadorPreguntas.textContent = `Preguntas restantes: ${dataTrivia.RESTANTES}/${dataTrivia.TOTAL}`;
+  contadorPreguntas.textContent = `Preguntas: ${dataTrivia.RESTANTES}/${dataTrivia.TOTAL}`;
   opcionesContainer.innerHTML = "";
   btnEnviar.classList.add("d-none");
   claveSeleccionada = null;
