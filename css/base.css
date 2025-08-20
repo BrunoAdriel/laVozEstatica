@@ -1,0 +1,133 @@
+/*Codigo Funente que se Repitre*/
+
+body{
+    background-image: url('https://externos.playtown.com.ar/tntsports/img/co_bg.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/*Contenedor del Logo LaVoz*/
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-logo{
+  margin: 5% 0;
+  width: 100%;
+  max-width: 390px;
+}
+
+
+/*Contenido Estilos Nav*/
+.custom-nav {
+  margin-top: 10px;
+  margin-right: 30px;
+  margin-bottom: 20px;
+  text-align: center; 
+}
+
+.custom-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  gap: 2rem;             
+}
+
+.custom-nav li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+/* Línea solo bajo el texto */
+.custom-nav li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%; /* empieza oculta */
+  height: 3px;
+  background: linear-gradient(90deg, #ff1f3d, #0d6efd);
+  transition: width 0.3s ease;
+}
+
+.custom-nav li a:hover::after {
+  width: 100%; /* subraya solo el texto */
+}
+
+
+/*Btn para cerrar modal*/
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  line-height: 1;
+  display: inline-block;
+}
+
+/* BTN principal */
+.btn-principal{
+    background-color: #031927;
+    /* background: linear-gradient(135deg, rgba(255, 31, 61, 0.4) 0%, #031927 20%, #031927 80%, rgba(255, 31, 61, 0.4) 100%); */
+    background: linear-gradient(135deg, rgba(178, 2, 18, .5) 0%, #031927 20%, #031927 80%, rgba(178, 2, 18, .5) 100%);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+/* === FOOTER GENERAL === */
+.footerContainer {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; 
+  background-color: rgba(0, 0, 0, 0.3);
+  border-top: 4px solid #ff1f3d;
+  padding: 1rem 2rem;
+  border-radius: 3%;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* === COLUMNA IZQUIERDA Y DERECHA === */
+.footerLeft,
+.footerRight {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footerRight {
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+/* === LOGOS === */
+.imgFooter,
+.logoSecundario {
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+}
