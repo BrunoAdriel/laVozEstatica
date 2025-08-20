@@ -215,7 +215,7 @@ voteForm.addEventListener('submit', async function (e) {
   const email = document.getElementById('email').value.trim();
   const operadora = parseInt(document.getElementById('operadora').value, 10);
 
-  const telefonoRegex = /^[0-9]{10,15}$/;
+  const telefonoRegex = /^[0-7]{8,15}$/;
   const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
   if (!telefonoRegex.test(telefono)) {
