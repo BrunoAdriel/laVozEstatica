@@ -250,14 +250,22 @@ telefonoInput.addEventListener('input', (e) => {
     };
 
     // Mostrar mensaje y datos en consola
-    Toastify({
-      text: "/index.html?flag=success",
-      backgroundColor: "green",
-      duration: 4000,
-      gravity: "top",
-      position: "center",
-      close: true
-    }).showToast();
+    function mostrarToast(mensaje, tipo) {
+      let color = {
+        success: "linear-gradient(to right, #00b09b, #96c93d)",
+        error: "linear-gradient(to right, #d32f2f, #ff5252)",
+        warning: "linear-gradient(to right, #f7b733, #fc4a1a)"
+      };
+      Toastify({
+        text: mensaje,
+        style: { background: color[tipo] } || "linear-gradient(to right, #00c6ff, #0072ff)",
+        duration: 3000,
+        gravity: "center",
+        position: "center",
+        close: true
+      }).showToast();
+    }
+    mostrarToast("Votos enviados correctamente", "success");
     console.log("Datos seleccionados:", datos);
 
     // Ocultar spinner después de mostrar el mensaje
@@ -279,33 +287,28 @@ const urlParams = new URLSearchParams(queryString);
 const flag = urlParams.get('flag');
 
 //Selecciona segun la operacion
+  function mostrarToast(mensaje, tipo) {
+    let color = {
+      success: "linear-gradient(to right, #00b09b, #96c93d)",
+      error: "linear-gradient(to right, #d32f2f, #ff5252)",
+      warning: "linear-gradient(to right, #f7b733, #fc4a1a)"
+    };
+    Toastify({
+      text: mensaje,
+      style: { background: color[tipo] } || "linear-gradient(to right, #00c6ff, #0072ff)",
+      duration: 3000,
+      gravity: "top",
+      position: "center",
+      close: true
+    }).showToast();
+  }
+
   if (flag === 'success') {
-    Toastify({
-      text: "Operación exitosa",
-      backgroundColor: "green",
-      duration: 3000,
-      gravity: "top",
-      position: "center",
-      close: true
-    }).showToast();
-  } else if (flag === 'danger') {
-    Toastify({
-      text: "Ocurrió un error",
-      backgroundColor: "red",
-      duration: 3000,
-      gravity: "top",
-      position: "center",
-      close: true
-    }).showToast();
+    mostrarToast("Operación exitosa", "success");
+  } else if (flag === 'danger' || flag === 'fail' || flag === 'failure') {
+    mostrarToast("Ocurrió un error", "error");
   } else if (flag === 'pendding') {
-    Toastify({
-      text: "Tu operación está pendiente",
-      backgroundColor: "orange",
-      duration: 3000,
-      gravity: "top",
-      position: "center",
-      close: true
-    }).showToast();
+    mostrarToast("Tu operación está pendiente", "warning");
   }
 
 //Funcion para capturar la informacion de la plataforma
